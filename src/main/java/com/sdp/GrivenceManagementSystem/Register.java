@@ -8,12 +8,30 @@ import javax.persistence.Table;
 @Table(name = "regdata")
 public class Register {
 	@Id
-	String username;
-	String password;
-	String Id;
-	String email;
-	String name;
-	String phone;
+	private String username;
+	private String password;
+	private String Id;
+	private String email;
+	private String name;
+	private String phone;
+	private String role;
+	private String clg;
+    
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getClg() {
+		return clg;
+	}
+
+	public void setClg(String clg) {
+		this.clg = clg;
+	}
 
 	public String getUsername() {
 		return username;
@@ -65,6 +83,6 @@ public class Register {
 	@Override
 	public String toString() {
 		return "Register [username=" + username + ", password=" + password + ", Id=" + Id + ", email=" + email
-				+ ", name=" + name + ", phone=" + phone + "]";
+				+ ", name=" + name + ", phone=" + phone + ", role=" + role + ", clg=" + clg + "]";
 	}
 }

@@ -23,4 +23,10 @@ public class RegisterController {
 	public String loginData(@PathVariable("username") String username, @PathVariable("password") String password) {
 		return rm.loginData(username, password);
 	}
+	
+	@GetMapping("/roles/{username}")
+	public String userrole(@PathVariable("username") String username)
+	{
+		return rm.findrole(username);
+	}
 }

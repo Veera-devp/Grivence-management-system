@@ -142,13 +142,46 @@
           display.innerText = this.responseText;
           if(this.responseText=="Login success")
           {
-        	  setTimeout(function()
-        	  {
-        	        window.location="http://localhost:8080/student-dashboard";
-        	  },3000);
+        	  switchRole();
   		      sessionStorage.setItem("username",user.value);
+  		      
           }
       };
+    }
+    function switchRole()
+    {
+    	var xhtml = new XMLHttpRequest();
+    	var person=sessionStorage.getItem("username")
+    	var url ="http://localhost:8080/api/roles/"+person;
+    	xhtml.open("GET", url, true);
+    	xhtml.setRequestHeader('Content-Type','application/json');
+    	xhtml.send();
+    	xhtml.onreadystatechange = function()
+    	{
+    		if(this.readyState == 4 && this.status == 200)
+    		{
+    			var data=JSON.parse(this.responseText);
+    			for(var x in data)
+    			{
+    				sessionStorage.setItem("role",data[x].role);
+    				var role=sessionStorage.getItem("role")
+    				if(role=="Student")
+			    	{
+				   	  setTimeout(function()
+				   	  {
+	            			window.location="http://localhost:8080/student.jsp";
+	         		  },1000);
+         			}
+         			else if(role=="Faculty")
+         			{
+					  setTimeout(function()
+				   	  {
+	            			window.location="http://localhost:8080/faculty-dash.jsp";
+	         		  },1000);
+					}
+    			}
+    		}
+    	};
     }
     </script>
     </html>

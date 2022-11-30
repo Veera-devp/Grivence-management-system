@@ -38,12 +38,14 @@ public class MainController {
 
 		return mv;
 	}
+	
 	@GetMapping("/student-dashboard")
 	public ModelAndView student() {
 		ModelAndView mv = new ModelAndView("student");
 
 		return mv;
 	}
+	
 	@GetMapping("/student-dashboard/complaint-upload")
 	public ModelAndView complaint() {
 		ModelAndView mv = new ModelAndView("complaint-upload");
@@ -56,27 +58,59 @@ public class MainController {
 
 		return mv;
 	}
+	
 	@GetMapping("/student-dashboard/complaint-delete")
 	public ModelAndView complaintdelete() {
 		ModelAndView mv = new ModelAndView("complaint-delete");
 
 		return mv;
 	}
+	
 	@GetMapping("/adminLogin")
 	public ModelAndView adminLogin() {
 		ModelAndView mv = new ModelAndView("adminLogin");
 
 		return mv;
 	}
+	
 	@GetMapping("/adminpage")
 	public ModelAndView adminpage() {
 		ModelAndView mv = new ModelAndView("adminpage");
 
 		return mv;
 	}
+	
 	@GetMapping("/admin-dashboard")
 	public ModelAndView admindashboard() {
 		ModelAndView mv = new ModelAndView("admindash");
+
+		return mv;
+	}
+	
+	@GetMapping("/student-dashboard/profile-details")
+	public ModelAndView studentprofiledetails() {
+		ModelAndView mv = new ModelAndView("profile_details");
+
+		return mv;
+	}
+	
+	@GetMapping("/student-dashboard/complaint-details")
+	public ModelAndView studentcomplaintdetails() {
+		ModelAndView mv = new ModelAndView("complaint_details");
+
+		return mv;
+	}
+	
+	@GetMapping("/faculty-dashobard")
+	public ModelAndView facultydash() {
+		ModelAndView mv = new ModelAndView("faculty");
+
+		return mv;
+	}
+	
+	@GetMapping("/faculty-dashboard/profile-details")
+	public ModelAndView facultyprofiledetails() {
+		ModelAndView mv = new ModelAndView("profile_details");
 
 		return mv;
 	}

@@ -29,13 +29,19 @@ public class ComplaintController
 	}
 	
 	@PutMapping("/complaint-update/{id}")
-	public String complaintup(@RequestBody ComplaintDetails cd,@PathVariable("id") Long id)
+	public String complaintup(@RequestBody ComplaintDetails cd,@PathVariable("id") String id)
 	{
 		return c.updatedata(cd,id);
 	}
 	@DeleteMapping("/complaint-withdraw/{id}")
-	public String complaintdel(@PathVariable("id") Long id)
+	public String complaintdel(@PathVariable("id") String id)
 	{
 		return c.deletedata(id);
+	}
+	
+	@GetMapping("/complaint/{id}")
+	public String compliantUser(@PathVariable("id") String username)
+	{
+		return c.readUsername(username);
 	}
 }

@@ -7,13 +7,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "complaints")
 public class ComplaintDetails {
-	@Id
 	private Long fid;
 	private String fname,fmail,hmail;
 	private int sec,hid;
 	private String branch;
 	private String dep;
 	private String issue;
+	
+	@Id
 	private String username;
 	public String getUsername() {
 		return username;

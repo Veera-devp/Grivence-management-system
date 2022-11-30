@@ -169,14 +169,14 @@
 			    	{
 				   	  setTimeout(function()
 				   	  {
-	            			window.location="http://localhost:8080/student.jsp";
+	            			window.location="http://localhost:8080/student-dashboard";
 	         		  },1000);
          			}
          			else if(role=="Faculty")
          			{
 					  setTimeout(function()
 				   	  {
-	            			window.location="http://localhost:8080/faculty-dash.jsp";
+	            			window.location="http://localhost:8080/faculty-dashobard";
 	         		  },1000);
 					}
     			}

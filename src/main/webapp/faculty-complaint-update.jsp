@@ -7,11 +7,11 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<title>StudentDshboard</title>
+<title>FacultyDshboard</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">UserDashboard</a>
+  <a class="navbar-brand" href="#">FacultyDashboard</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -67,7 +67,7 @@ function update()
 	var lbl = document.getElementById("lbl");
 	var user=sessionStorage.getItem("username");
 	alert(user);
-	var url = "http://localhost:8080/api/complaint-update/"+user;
+	var url = "http://localhost:8080/api/faculty-complaint-update/"+user;
 	xhtml.open("PUT", url, true);
 	xhtml.setRequestHeader('Content-Type','application/json');
 	xhtml.send(JSON.stringify({

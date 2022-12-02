@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page errorPage="error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 
 <title>StudentDshboard</title>
 </head>
-<body>
+<body onload="usernameDisplay()">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">UserDashboard</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,15 +34,15 @@
   </div>
 </nav>
 <section>
-      <div class="container">
+       <div class="container">
     <center><h3 class="well" >Upload Grivence</h3></center>
     <br/>
 	<div class="col-lg-12 well">
 	<div class="rowing">
 							<div class="col-sm-6 form-group">
-								<label>ID number</label>
-								<input type="number" placeholder="Enter Id of faculty Here.." class="form-control" id ="df"/>
-							</div>
+								<label>Username</label>
+								<input type="text" disabled placeholder="Enter Username of faculty Here.." class="form-control" id ="df"/>
+							</div> 
 						
 						<label id="lbl"></label>
                   <center>
@@ -55,17 +56,22 @@
 				</div>
 	</div>
 	</div>
-      </section>
+      </section> 
 </body>
 <script>
+function usernameDisplay()
+{
+	var username=sessionStorage.getItem("username");
+	var u=document.getElementById("df");
+	u.value=username;
+}
 function del()
 {
 	var xhtml = new XMLHttpRequest();
-	var t1 = document.getElementById("df");
-	var url = "http://localhost:8080/api/complaint-withdraw/" + t1.value;
+	var user=sessionStorage.getItem("username");alert(user);
+	var url = "http://localhost:8080/api/complaint-withdraw/" + user;
 	xhtml.open("DELETE", url, true);
 	xhtml.setRequestHeader('Content-Type','application/json');
-	alert(url);
 	var lbl = document.getElementById("lbl");
 	alert(lbl);
 	xhtml.send();

@@ -10,25 +10,23 @@
 <body onload="profileDetails()">
 
 Username : <p id="t1"></p>
-Id : <p id="t2"></p>
-College : <p id="t3"></p>
-Email : <p id="t4"></p>
-Name : <p id="t5"></p>
-Role : <p id="t6"></p>
+student id : <p id="srh"></p>
+student name : <p id="srh2"></p>
+student mail : <p id="srh3"></p>
+student issue : <p id="srh4"></p>
 </body>
 <script type="text/javascript">
 function profileDetails()
 {
-	
 		var xhtml = new XMLHttpRequest();
 		var t1 = document.getElementById("t1");
-		var t2 = document.getElementById("t2");
-		var t3 = document.getElementById("t3");
-		var t4 = document.getElementById("t4");
-		var t5 = document.getElementById("t5");
-		var t6 = document.getElementById("t6");
+		var t2 = document.getElementById("srh");
+		var t3 = document.getElementById("srh2");
+		var t4 = document.getElementById("srh3");
+		var t5 = document.getElementById("srh4");
 		t1.innerHTML=sessionStorage.getItem("username");
-		var url="http://localhost:8080/api/roles/"+sessionStorage.getItem("username");
+		
+		var url="http://localhost:8080/api/faculty-complaint-register/"+sessionStorage.getItem("username");
 		
 		xhtml.open("GET", url, true);
 		xhtml.setRequestHeader('Content-Type','application/json');
@@ -39,14 +37,15 @@ function profileDetails()
 		{
 			if(this.readyState == 4 && this.status == 200)
 			{
+				
 				var data=JSON.parse(this.responseText);
+				alert(data);
 				for(var x in data)
 				{
-					t2.innerHTML=data[x].Id;
-					t3.innerHTML=data[x].clg;
-					t4.innerHTML=data[x].email;
-					t5.innerHTML=data[x].name;
-					t6.innerHTML=data[x].role;
+					t2.innerHTML=data[x].sid;
+					t3.innerHTML=data[x].name;
+					t4.innerHTML=data[x].smail;
+					t5.innerHTML=data[x].issue;
 				}
 			}
 		};

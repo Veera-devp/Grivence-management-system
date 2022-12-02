@@ -45,4 +45,27 @@ public class RegisterManager {
         Gson g=gb.create();
         return g.toJson(list);
     }
+    
+    public String readData()
+    {
+    	return toJsonString(rr.findAll());
+    }
+
+	private String toJsonString(List<Register> list) 
+	{
+		GsonBuilder gb=new GsonBuilder();
+        Gson g=gb.create();
+        return g.toJson(list);
+	}
+	public String updatedata(Register r, String id)
+	{
+		Register rrr = rr.findById(id).get();
+		rrr.setName(r.getName());
+		rrr.setEmail(r.getEmail());
+		rrr.setPhone(r.getPhone());
+		rrr.setRole(r.getRole());
+		rrr.setClg(r.getClg());
+		rr.save(rrr);
+		return "Updated successfully.....";
+	}
 }

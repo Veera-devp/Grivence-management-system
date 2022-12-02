@@ -9,7 +9,7 @@
 
 <title>StudentDshboard</title>
 </head>
-<body>
+<body onload="usernameDisplay()">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">UserDashboard</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,21 +34,20 @@
   </div>
 </nav>
 <section>
-      <div class="container">
-    <center><h3 class="well" >Update Grivence</h3></center>
+       <div class="container">
+    <center><h3 class="well" >Delete Grivence</h3></center>
     <br/>
 	<div class="col-lg-12 well">
 	<div class="rowing">
-					<div class="form-group">
-							<label>Issue</label>
-							<textarea placeholder="Enter your issue" rows="3" class="form-control"id ="t3"></textarea>
-						</div>
-						<br/>
-						<br/>
+							<div class="col-sm-6 form-group">
+								<label>Username</label>
+								<input type="text" disabled placeholder="Enter Username of faculty Here.." class="form-control" id ="df"/>
+							</div> 
+						
 						<label id="lbl"></label>
                   <center>
-					<button onClick = "update()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Update
+					<button onClick = "del()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Delete
 </button>
 </center>
 
@@ -57,27 +56,30 @@
 				</div>
 	</div>
 	</div>
-      </section>
+      </section> 
 </body>
 <script>
-function update()
+function usernameDisplay()
+{
+	var username=sessionStorage.getItem("username");
+	var u=document.getElementById("df");
+	u.value=username;
+}
+function del()
 {
 	var xhtml = new XMLHttpRequest();
-	var t3 = document.getElementById("t3");
-	var lbl = document.getElementById("lbl");
-	var user=sessionStorage.getItem("username");
-	alert(user);
-	var url = "http://localhost:8080/api/complaint-update/"+user;
-	xhtml.open("PUT", url, true);
+	var user=sessionStorage.getItem("username");alert(user);
+	var url = "http://localhost:8080/api/faculty-complaint-withdraw/" + user;
+	xhtml.open("DELETE", url, true);
 	xhtml.setRequestHeader('Content-Type','application/json');
-	xhtml.send(JSON.stringify({
-		issue : t3.value,
-	}));
+	var lbl = document.getElementById("lbl");
+	alert(lbl);
+	xhtml.send();
 	
 	xhtml.onreadystatechange = function()
 	{
 		if(this.readyState == 4 && this.status == 200)
-			lbl.innerText = "Data Updated Successfully...!";
+			lbl.innerText = this.responseText;
 	};
 }
 </script>

@@ -1,5 +1,7 @@
 package com.sdp.GrivenceManagementSystem;
 
+import java.util.Optional;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -85,4 +87,5 @@ public class Register {
 		return "Register [username=" + username + ", password=" + password + ", Id=" + Id + ", email=" + email
 				+ ", name=" + name + ", phone=" + phone + ", role=" + role + ", clg=" + clg + "]";
 	}
+
 }

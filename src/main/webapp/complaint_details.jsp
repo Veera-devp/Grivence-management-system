@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page errorPage="error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@ function profileDetails()
 		var t5 = document.getElementById("t5");
 		var t6 = document.getElementById("t6");
 		var t7 = document.getElementById("t7");
-		var t8 = document.getElementById("t8");var t5 = document.getElementById("t5");
+		var t8 = document.getElementById("t8");
 		var t9 = document.getElementById("t9");
 		t1.innerHTML=sessionStorage.getItem("username");
 		var url="http://localhost:8080/api/complaint/"+sessionStorage.getItem("username");

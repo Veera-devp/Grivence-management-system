@@ -50,7 +50,6 @@ public class ComplaintManager {
 	public String updatedata(ComplaintDetails cd, String id)
 	{
 		ComplaintDetails cc = cr.findById(id).get();
-		cc.setFname(cd.getFname());
 		cc.setIssue(cd.getIssue());
 		cr.save(cc);
 		return "Updated successfully.....";

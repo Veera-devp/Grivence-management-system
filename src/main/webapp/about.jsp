@@ -1,3 +1,4 @@
+<%@ page errorPage="error.jsp" %>s
 <!doctype html>
 <html lang="zxx">
 

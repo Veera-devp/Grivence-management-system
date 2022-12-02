@@ -36,10 +36,34 @@
 <br/>
 <br/>
 <center>
-<a href="admin_student.jsp" class="btn btn-primary" role="button" aria-pressed="true">Students</a>
-<a href="admin_faculty.jsp" class="btn btn-primary" role="button" aria-pressed="true">Faculty</a>
-<a href="admin_allusers.jsp" class="btn btn-primary" role="button" aria-pressed="true">All Users</a>
-<a href="exam_issue_display.jsp" class="btn btn-primary" role="button" aria-pressed="true">Exam Section</a>
+<div id="display"/>
 </center>
+	<script>
+		var xhtml = new XMLHttpRequest();
+		var url="http://localhost:8080/api/complaint-register";
+		xhtml.open("GET", url, true);
+		xhtml.setRequestHeader('Content-Type', 'application/json');
+
+		xhtml.send();
+
+		var display = document.getElementById("display");
+
+		xhtml.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var table = "<table border='1'>";
+				var i = 0;
+				table += "<tr>  <th>S.no</th> <th>Faculty-id</th> <th>Faculty-mail</th> <th>Branch</th> <th>Department</th> <th>Department HOD id</th> <th>Hod mail</th> <th>Complaint</th> <th>Username</th> </tr>";
+				var data = JSON.parse(this.responseText);
+				for ( var x in data) {
+					table = table + "<tr>" + "<td>"+ (i+1) +"</td>"
+					+ "<td>" + data[x].fid + "</td>"+ "<td>" + data[x].fmail + "</td>"+ "<td>" + data[x].branch + "</td>" +"<td>" + data[x].dep + "</td>" +"<td>" + data[x].hid + "</td>"+"<td>" + data[x].hmail + "</td>"+"<td>" + data[x].issue + "</td>"+"<td>" + data[x].username + "</td>"+"<td>"+"<a href=complaint_edit.jsp?fid="+data[x].username+">edit</a>"+"</td>"+"<td>"+"<a href=remove.jsp?fid="+data[x].username+">remove</a>"+"</td>"+"</tr>";
+					i++;
+					
+				}
+				table = table + "</table>";
+				display.innerHTML = table;
+			}
+		};
+	</script>
 </body>
 </html>

@@ -69,7 +69,7 @@
 						</div>
 						<div class="form-group">
 							<input type="password" class="form-control" name="password"
-								placeholder="Password" id="t2" required>
+								placeholder="Password" id="t2" required/>
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" name="id"

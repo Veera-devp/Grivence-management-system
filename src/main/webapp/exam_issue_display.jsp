@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<jsp:include page="admin_navbar.jsp" /> 
 <title>Insert title here</title>
 </head>
 <body>

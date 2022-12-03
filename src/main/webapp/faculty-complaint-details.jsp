@@ -9,12 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body onload="profileDetails()">
-
+<center>
 Username : <p id="t1"></p>
 student id : <p id="srh"></p>
 student name : <p id="srh2"></p>
 student mail : <p id="srh3"></p>
 student issue : <p id="srh4"></p>
+</center>
 </body>
 <script type="text/javascript">
 function profileDetails()

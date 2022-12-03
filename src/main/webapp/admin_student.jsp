@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<link rel="stylesheet" href="../static/css/table.css">
 <title>Admin-dashboard</title>
 </head>
 <body>
@@ -32,7 +32,17 @@
 				var data = JSON.parse(this.responseText);
 				for ( var x in data) {
 					table = table + "<tr>" + "<td>"+ (i+1) +"</td>"
-					+ "<td>" + data[x].fid + "</td>"+ "<td>" + data[x].fmail + "</td>"+ "<td>" + data[x].branch + "</td>" +"<td>" + data[x].dep + "</td>" +"<td>" + data[x].hid + "</td>"+"<td>" + data[x].hmail + "</td>"+"<td>" + data[x].issue + "</td>"+"<td>" + data[x].username + "</td>"+"<td>"+"<a href=complaint_edit.jsp?fid="+data[x].username+">edit</a>"+"</td>"+"<td>"+"<a href=remove.jsp?fid="+data[x].username+">remove</a>"+"</td>"+"</tr>";
+					+ "<td>" + data[x].fid + "</td>"+ 
+					"<td>" + data[x].fmail + "</td>"+ 
+					"<td>" + data[x].branch + "</td>" +
+					"<td>" + data[x].dep + "</td>" +
+					"<td>" + data[x].hid + "</td>"+
+					"<td>" + data[x].hmail + "</td>"+
+					"<td>" + data[x].issue + "</td>"+
+					"<td>" + data[x].username + "</td>"+
+					"<td>"+"<a href=complaint_edit.jsp?fid="+data[x].username+">edit</a>"+"</td>"+
+					"<td>"+"<a href=remove.jsp?fid="+data[x].username+">remove</a>"+"</td>"+
+					"<td>"+"<a href=http://localhost:8000/>Resolve</a>"+"</td>"+"</tr>";
 					i++;
 					
 				}

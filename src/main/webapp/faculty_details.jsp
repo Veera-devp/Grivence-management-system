@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../static/css/table.css">
 </head>
 <body onload="read()">
 	<div id="display"></div>

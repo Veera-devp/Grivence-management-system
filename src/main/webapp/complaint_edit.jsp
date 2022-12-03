@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body onload="display()">
+<center>
   username:
   <input type="text" id="t1"/>
   <br/>
@@ -35,9 +36,11 @@
   <br/>
   Issue
   <input type="text" id="t9"/>
-  
+  <br/>
+  <br/>
   <button onclick="updateFunction()">Update</button>
   <label id="lbl"></label>
+  </center>
 </body>
 <script>
 function display()

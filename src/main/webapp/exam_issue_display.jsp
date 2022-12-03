@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <jsp:include page="admin_navbar.jsp" /> 
 <title>Insert title here</title>
+<link rel="stylesheet" href="../static/css/table.css">
 </head>
 <body>
 <div id="display"/>

@@ -29,7 +29,7 @@ Our three-person team completed a project on the "Instagrive" complaint manageme
 
 ![image](https://user-images.githubusercontent.com/82495769/205424975-df841082-2b47-4919-b105-77b9499d50fb.png)
 ![image](https://user-images.githubusercontent.com/82495769/205425044-771eab14-7c45-4d9a-a4d7-24fb0072399f.png)
-![image](https://user-images.githubusercontent.com/82495769/205425097-2b49e9dd-5bfb-4836-8d36-436ba7a1c914.png)
+![image](https://user-images.githubusercontent.com/82495769/205425205-16996553-0c8a-452f-a23e-e117a1e60888.png)
 ![image](https://user-images.githubusercontent.com/82495769/205425112-e8f8026d-95d7-428c-9e05-a5bcf28c52d4.png)
 
 
